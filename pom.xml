@@ -37,6 +37,19 @@
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
 
+<!--        h2 db-->
+        <!--<dependency>
+            <groupId>com.h2database</groupId>
+            <artifactId>h2</artifactId>
+            <scope>runtime</scope>
+        </dependency>-->
+
+<!--        MySql dbms-->
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+        </dependency>
+
 <!--        validation -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -48,6 +61,7 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-hateoas</artifactId>
         </dependency>
+
 <!--        open api -->
 <!--        <dependency>-->
 <!--            <groupId>org.springdoc</groupId>-->
@@ -67,11 +81,7 @@
             <scope>runtime</scope>
             <optional>true</optional>
         </dependency>
-        <dependency>
-            <groupId>com.h2database</groupId>
-            <artifactId>h2</artifactId>
-            <scope>runtime</scope>
-        </dependency>
+
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
