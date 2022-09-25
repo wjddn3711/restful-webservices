@@ -95,7 +95,7 @@ public class UserJpaResource {
     }
 
     @GetMapping("/jpa/users/{id}/posts/{post_id}")
-    public Post retrievePostForUser(@PathVariable Integer id
+    public EntityModel<Post> retrievePostForUser(@PathVariable Integer id
                                     ,@PathVariable Integer post_id){
         User user = repository.findById(id).orElse(null);
         if (user == null)
@@ -106,6 +106,11 @@ public class UserJpaResource {
         if (post==null)
             throw new PostNotFoundException("id : "+post_id);
 
-        return post;
+        WebMvcLinkBuilder link = WebMvcLinkBuilder
+                .linkTo(WebMvcLinkBuilder.methodOn(this.getClass()).retrievePostsForUser(id));
+
+        EntityModel<Post> entityModel = EntityModel.of(post, link.withRel("all-posts"));
+
+        return entityModel;
     }
 }
